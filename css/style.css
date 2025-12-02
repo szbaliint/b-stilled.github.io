@@ -1,0 +1,729 @@
+/* =========================================
+   1. ALAPBEÁLLÍTÁSOK (RESET & BASE)
+   ========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "Poppins", "Segoe UI", Tahoma, sans-serif;
+    /* background: linear-gradient(135deg, #0D0D0D 0%, #1C1C1C 100%); */
+    background-color: #f4f4f4;
+    color: black;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* =========================================
+   2. ELRENDEZÉS (LAYOUT)
+   ========================================= */
+
+main {
+    flex: 1;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* * 3. HÉT (Box Model):
+ * A 'section' elemek kapnak belső és külső térközt (padding, margin),
+ * hogy ne tapadjanak össze.
+ */
+section {
+    padding: 3rem 0;
+}
+
+/* =========================================
+   3. TIPOGRÁFIA (TYPOGRAPHY)
+   ========================================= */
+
+h1,
+h2,
+h3 {
+    margin-bottom: 1rem;
+    /* 3. hét: Térköz a címek alatt */
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 2rem;
+    /* 2. hét: Betűméret */
+    text-align: center;
+    /* 2. hét: Középre igazítás */
+    margin-bottom: 2rem;
+}
+
+/* =========================================
+   4. FEJLÉC (HEADER)
+   ========================================= */
+
+header {
+    background-color: black;
+    border-bottom: 10px solid #fca311;
+    padding: 1rem 0;
+}
+
+/*
+ * 4. HÉT (Flexbox):
+ * A 'display: flex' segítségével a logó és a nav egy sorba kerül.
+ * 'justify-content: space-between' a két elemet a sor két szélére tolja.
+ * 'align-items: center' függőlegesen középre igazítja őket.
+ */
+.header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container h1 {
+    margin: 0;
+    /* Levesszük a h1 alap margóját */
+    font-size: 1.8rem;
+}
+
+.logo-container a {
+    color: white;
+    /* A logó szövege legyen szürke */
+    text-decoration: none;
+}
+
+/* =========================================
+   5. NAVIGÁCIÓ (NAVIGATION)
+   ========================================= */
+
+/*
+ * 4. HÉT (Flexbox):
+ * A navigációs listát is flexbox-szal rendezzük.
+ * 'gap' (4. hét) térközt tesz az elemek közé.
+ */
+.main-nav {
+    list-style: none;
+    /* 2. hét: Lista "pöttyök" eltávolítása */
+    display: flex;
+    gap: 1.5rem;
+}
+
+.main-nav a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.main-nav a:hover {
+    color: #fca311;
+    /* Akcentus szín hoveren */
+    text-decoration: none;
+}
+
+/* =========================================
+   6. HERO SZEKCIÓ
+   ========================================= */
+
+.hero {
+    background: #f4f4f4;
+    /* Halvány szürke háttér */
+    text-align: center;
+    padding: 1rem 0;
+}
+
+/* =========================================
+   7. GOMBOK (BUTTONS / CTA)
+   ========================================= */
+
+/*
+ * 3. HÉT (Box Model) és 2. HÉT (CSS Alapok):
+ * Egy linket gombbá alakítunk.
+ * 'display: inline-block' kell, hogy adhassunk neki padding-et és margint.
+ */
+.cta-gomb {
+    display: block;
+    width: fit-content;
+    background-color: #14213d;
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    margin-top: 1rem;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    /* 3. hét: Lekerekített sarkok */
+    margin: 1rem auto;
+}
+
+.cta-gomb:hover {
+    background-color: #555;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* =========================================
+   8. REFERENCIA KÁRTYÁK (GRID)
+   ========================================= */
+
+/*
+ * 5. HÉT (CSS Grid):
+ * A 'display: grid' segítségével rácsba rendezzük a kártyákat.
+ * 'grid-template-columns: 1fr 1fr 1fr' három egyenlő (1 fraction)
+ * szélességű oszlopot hoz létre.
+ * 'gap' (5. hét) térközt (rést) hagy a rács elemei között.
+ */
+.referencia-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+}
+
+.referencia-kartya {
+    border: 1px solid #ddd;
+    /* 3. hét: keret */
+    border-radius: 5px;
+    /* 3. hét: lekerekítés */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* Opcionális árnyék, 3. hét anyag */
+}
+
+/*
+ * 6. HÉT (Reszponzivitás):
+ * 'width: 100%' és 'display: block' biztosítja, hogy a képek
+ * kitöltsék a szülő 'article' elemet, de ne lógjanak túl rajta.
+ */
+.referencia-kartya img {
+    width: 100%;
+    display: block;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.kartya-tartalom {
+    padding: 1.5rem;
+    /* 3. hét: Belső térköz */
+}
+
+/* =========================================
+   9. ÁRAZÁS / SZOLGÁLTATÁSOK (PRICING)
+   ========================================= */
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.pricing-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 5px solid #14213d;
+    /* Sötétkék felső csík */
+}
+
+.pricing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-top-color: #fca311;
+    /* Hoverre narancs lesz */
+}
+
+.price {
+    font-size: 2.5rem;
+    color: #14213d;
+    font-weight: 700;
+    margin: 1rem 0;
+}
+
+/* =========================================
+   10. PORTFÓLIÓ (PORTFOLIO)
+   ========================================= */
+
+.portfolio-item {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    margin-bottom: 4rem;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    /* Opcionális keret */
+}
+
+/* Minden második elemet megfordítunk (kép jobbra, szöveg balra) */
+.portfolio-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.portfolio-img {
+    flex: 1;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.portfolio-img:hover img {
+    transform: scale(1.05);
+}
+
+.portfolio-desc {
+    flex: 1;
+}
+
+.portfolio-desc h3 {
+    color: #14213d;
+    font-size: 1.8rem;
+}
+
+.portfolio-meta {
+    color: #fca311;
+    /* Narancs kiemelés */
+    font-weight: bold;
+    margin-bottom: 1rem;
+    display: block;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+/* =========================================
+   11. GALÉRIA (GALLERY)
+   ========================================= */
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    height: 300px;
+    /* Fix magasság a szép rácshoz */
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Kitölti a dobozt torzulás nélkül */
+    transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/* =========================================
+   12. LISTÁK ÉS ESZKÖZPARK (LISTS)
+   ========================================= */
+
+.eszkozpark {
+    background-color: #14213d;
+    /* Sötétkék háttér */
+    color: #fff;
+    /* Fehér szöveg */
+    margin-top: 0;
+    padding: 3rem 0;
+    /* Itt maradhat a nagyobb belső térköz */
+}
+
+.eszkoz-lista ul {
+    list-style: none;
+    /* Nincsenek pöttyök */
+    padding-left: 0;
+}
+
+.eszkozpark .eszkoz-lista li {
+    color: #fff;
+    border-bottom: 1px solid #333;
+    /* Finom elválasztó vonal */
+    padding: 0.5rem 0;
+}
+
+.eszkozpark strong {
+    color: #fca311;
+    /* A kiemelések legyenek narancssárgák */
+}
+
+.features-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.features-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.features-list li:last-child {
+    border-bottom: none;
+}
+
+/* =========================================
+   13. ŰRLAPOK (FORMS)
+   ========================================= */
+
+form {
+    max-width: 600px;
+    margin: 2rem auto;
+    /* Visszaállítottam a margin-t a tetején, hogy legyen térköz felül */
+    text-align: left;
+    padding: 2rem;
+    border-radius: 8px;
+    /* A háttérszínt és border-t inline style-ban adtuk meg a HTML-ben az egyediség miatt, 
+       ezért itt az általános formázást adjuk meg */
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-row {
+    display: flex;
+    gap: 1rem;
+    /* Térköz a két mező között */
+}
+
+.half-width {
+    flex: 1;
+    /* Mindkét mező egyenlő széles legyen */
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    /* Ezt kicsit növeltem, hogy legyen tér a label és az input között */
+    font-weight: 500;
+    color: #333;
+    /* Általános label szín: sötét, ha világos a háttér */
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1rem;
+    color: #333;
+    /* Input mező szövege legyen sötét */
+    background-color: #fff;
+    /* Input mező háttérszíne */
+}
+
+/* Placeholder szöveg stílusa (fontos, hogy olvasható legyen) */
+input::placeholder,
+textarea::placeholder {
+    color: #888;
+    /* Világosabb szürke, hogy kontrasztosabb legyen */
+    opacity: 1;
+    /* Alapértelmezetten eléggé áttetsző lehet */
+}
+
+/* Hibaüzenet stílusa */
+.error-msg {
+    color: #ff6b6b;
+    font-size: 0.85rem;
+    display: block;
+    margin-top: 0.3rem;
+    height: 1.2rem;
+}
+
+/* Hibás mező kerete */
+input.invalid,
+select.invalid,
+textarea.invalid {
+    border-color: #ff6b6b;
+    background-color: #fff0f0;
+}
+
+/* --- CTA Szekció űrlap specifikus --- */
+
+.cta-kapcsolat {
+    background-color: #f4f4f4;
+    color: black;
+    text-align: center;
+}
+
+.cta-kapcsolat h2 {
+    color: #333;
+}
+
+.cta-kapcsolat .cta-gomb {
+    background-color: #333;
+    color: #fff;
+}
+
+.cta-kapcsolat .cta-gomb:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+/* HA az űrlap a .cta-kapcsolat szekcióban van (ami sötét háttérrel rendelkezik),
+   akkor a label-ek legyenek fehérek. */
+.cta-kapcsolat label {
+    color: #fff;
+}
+
+/* Külön stílus a küldés gombnak az űrlapon belül, hogy jobban illeszkedjen */
+#ajanlat-form .cta-gomb {
+    background-color: #fca311;
+    /* Narancs színű legyen a küldés gomb */
+    color: #14213d;
+    /* Sötétkék szöveggel */
+    margin: 1.5rem auto 0 auto;
+    /* Középre igazítás, kicsit több felső margin */
+    width: 100%;
+    /* Kitölti a form szélességét */
+    max-width: 300px;
+    /* De maximum ennyi */
+    display: block;
+    /* Hogy a margin auto működjön */
+}
+
+#ajanlat-form .cta-gomb:hover {
+    background-color: #e09400;
+    /* Kicsit sötétebb narancs hoverre */
+    color: #14213d;
+}
+
+/* =========================================
+   14. LÁBLÉC (FOOTER)
+   ========================================= */
+
+footer {
+    background-color: #222;
+    color: #aaa;
+    padding: 2rem 0;
+    margin-top: 0;
+}
+
+/*
+ * 4. HÉT (Flexbox):
+ * Ismét Flexbox-ot használunk, hogy a két oszlopot (elérhetőség, social)
+ * szétválasszuk.
+ */
+.footer-tartalom {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.footer-social ul {
+    list-style: none;
+}
+
+.footer-social a {
+    color: #fff;
+    /* A social linkek legyenek fehérek */
+}
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid #444;
+    /* 3. hét: Elválasztó vonal */
+    padding-top: 1.5rem;
+    font-size: 0.9rem;
+}
+
+/* =========================================
+   15. LIGHTBOX / GALÉRIA STÍLUSOK
+   ========================================= */
+
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    /* Flexbox a tökéletes középre igazításhoz */
+    display: none;
+    /* Alapból rejtve, JS állítja flex-re */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox[style*="display: block"] {
+    display: flex !important;
+}
+
+.lightbox-content {
+    margin: 0;
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 90%;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+#caption {
+    margin: 1rem 0 0 0;
+    display: block;
+    width: 90%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: auto;
+}
+
+.lightbox-content,
+#caption {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(0)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
+
+/* Bezárás gomb (X) */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+    z-index: 1002;
+}
+
+.close:hover,
+.close:focus {
+    color: #fca311;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Előző és Következő gombok */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+    z-index: 1001;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Következő gomb jobbra */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* Előző gomb balra */
+.prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* Hover effektus */
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fca311;
+}
+
+/* =========================================
+   16. RESZPONZIVITÁS (MEDIA QUERIES)
+   ========================================= */
+
+/* Ha a képernyő 48em (768px) vagy annál keskenyebb (pl. tabletek) */
+@media (max-width: 48em) {
+
+    /* A grid rács 3 oszlop helyett 1 oszloposra vált */
+    .referencia-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* A fejlécben a nav és a logó egymás alá kerül */
+    .header-flex {
+        flex-direction: column;
+        /* 4. hét: Flexbox irányváltás */
+        gap: 1rem;
+    }
+
+    /* A lábléc oszlopai is egymás alá kerülnek */
+    .footer-tartalom {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    /* Portfólió elemek egymás alá */
+    .portfolio-item,
+    .portfolio-item:nth-child(even) {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* Szolgáltatások lista középre */
+    .features-list {
+        text-align: center;
+    }
+}
+
+/* Ha a képernyő 37.5em (600px) vagy annál keskenyebb */
+@media (max-width: 37.5em) {
+
+    /* Űrlap sorok törése */
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+}
+
+/* Reszponzivitás a galériához */
+@media only screen and (max-width: 700px) {
+    .lightbox-content {
+        width: 100%;
+    }
+}

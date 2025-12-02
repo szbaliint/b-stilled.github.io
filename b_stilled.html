@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="B-STILLED PHOTO" />
+    <link rel="icon" type="image/x-icon" href="img/favicon.png" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <title>B-STILLED PHOTO - Modern Fotográfia</title>
+    <script src="js/gallery.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="container header-flex">
+        <div class="logo-container">
+          <h1><a href="b_stilled.html">B-STILLED PHOTO</a></h1>
+        </div>
+
+        <nav>
+          <ul class="main-nav">
+            <li><a href="b_stilled.html" style="color: #fca311">Főoldal</a></li>
+            <li><a href="b_stilled_szolg.html">Szolgáltatások</a></li>
+            <li><a href="b_stilled_portf.html">Portfólió</a></li>
+            <li><a href="b_stilled_ajanl.html">Ajánlatkérés</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="referenciak">
+        <div class="container">
+          <h2>Rólam</h2>
+          <div class="referencia-grid">
+            <article class="referencia-kartya">
+              <img src=img/main/20251011-114.jpg alt="Plitvicei tavak" />
+              <div class="kartya-tartalom">
+                <h3>Plitvicei tavak</h3>
+                <p>Igazi őszi tájképek, a természet csendjében</p>
+                <a href="#" class="cta-gomb" data-project="plitvice"
+                  >Megnézem</a
+                >
+              </div>
+            </article>
+
+            <article class="referencia-kartya">
+              <img src=img/main/20220503-2.jpg alt="Ifjúsági világtalálkozó -
+              Róma" />
+              <div class="kartya-tartalom">
+                <h3>Ifjúsági világtalálkozó - Róma</h3>
+                <p>Felemelő képek az örök városból, a 2025-ös Szentévben</p>
+                <a href="#" class="cta-gomb" data-project="jit">Megnézem</a>
+              </div>
+            </article>
+
+            <article class="referencia-kartya">
+              <img src=img/main/20240611-97.jpg alt="Toszkána" />
+              <div class="kartya-tartalom">
+                <h3>Toszkána</h3>
+                <p>Mediterrán életképek Olaszország gyönyörű vidékéről</p>
+                <a href="#" class="cta-gomb" data-project="toszkana"
+                  >Megnézem</a
+                >
+              </div>
+            </article>
+          </div>
+          <a href="b_stilled_portf.html" class="cta-gomb"
+            >További galériák megtekintése</a
+          >
+        </div>
+      </section>
+
+      <section class="eszkozpark">
+        <div class="container">
+          <h2>Eszközparkom</h2>
+          <p>
+            A minőségi végeredményhez elengedhetetlen a professzionális
+            felszerelés. Ezekkel dolgozom:
+          </p>
+
+          <div class="eszkoz-lista">
+            <ul>
+              <li>
+                <strong>Vázak:</strong>Canon EOS R5 Mark II, Canon EOS R6 Mark
+                III
+              </li>
+              <li>
+                <strong>Objektívek:</strong> Canon RF 28-70mm f/2 L USM, Canon
+                EF 70-200mm f/2.8 L USM, Canon RF 50 mm f/1.4
+              </li>
+              <li>
+                <strong>Drón:</strong> DJI Mavic 3 Pro (légi felvételekhez)
+              </li>
+              <li>
+                <strong>Fények:</strong> Godox TT350C, Aputure Amaran LED
+                panelek
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-kapcsolat">
+        <div class="container">
+          <h2>Készen állsz megörökíteni a pillanatot?</h2>
+          <p>Keress bizalommal, és valósítsuk meg együtt az elképzeléseidet!</p>
+          <a href="mailto:info@valasztottneved.hu" class="cta-gomb"
+            >Kapcsolatfelvétel</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-tartalom">
+          <div class="footer-elerhetoseg">
+            <h3>Elérhetőség</h3>
+            <p>Kérdésed van? Írj egy e-mailt!</p>
+            <p>
+              <a href="b_stilled_ajanl.html">szbalint06@gmail.com</a>
+            </p>
+          </div>
+
+          <div class="footer-social">
+            <h3>Kövess be Instagramon!</h3>
+            <ul>
+              <li>
+                <a href="https://www.instagram.com/sz_baliint/" target="_blank"
+                  >Instagram</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="copyright">
+          <p>&copy; 2025 B-STILLED PHOTO. Minden jog fenntartva.</p>
+        </div>
+      </div>
+    </footer>
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+      <span class="close">&times;</span>
+      <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+      <a class="next" onclick="changeSlide(1)">&#10095;</a>
+      <img class="lightbox-content" id="lightbox-img" />
+      <div id="caption"></div>
+    </div>
+  </body>
+</html>

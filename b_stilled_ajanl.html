@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="B-STILLED PHOTO" />
+    <meta name="description" content="Kérj ajánlatot fotózásra! Portré, esemény, lifestyle fotózás." />
+    <link rel="icon" type="image/x-icon" href="img/favicon.png" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Ajánlatkérés - B-STILLED PHOTO</title>
+    <script src="js/script.js" defer></script>
+    <script src="js/main.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="container header-flex">
+        <div class="logo-container">
+          <h1><a href="b_stilled.html">B-STILLED PHOTO</a></h1>
+        </div>
+        <nav>
+          <ul class="main-nav" id="nav-menu">
+            <li><a href="b_stilled.html">Főoldal</a></li>
+            <li><a href="b_stilled_szolg.html">Szolgáltatások</a></li>
+            <li><a href="b_stilled_portf.html">Portfólió</a></li>
+            <li><a href="b_stilled_ajanl.html" style="color: #fca311;">Ajánlatkérés</a></li>
+          </ul>
+        </nav>
+
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" style="padding: 2rem 0;">
+        <div class="container">
+          <h2>Lépjünk Kapcsolatba!</h2>
+          <p>Írd meg az elképzeléseidet, és 24 órán belül válaszolok.</p>
+        </div>
+      </section>
+
+      <section class="cta-kapcsolat" id="kapcsolat-oldal" style="background-color: #14213d; padding: 4rem 0;">
+        <div class="container">
+            
+            <form id="ajanlat-form" novalidate style="background: rgba(255,255,255,0.05); border: 1px solid #444;">
+                
+                <div class="form-row">
+                    <div class="form-group half-width">
+                        <label for="vezeteknev">Vezetéknév:</label>
+                        <input type="text" id="vezeteknev" name="vezeteknev" placeholder="Kovács">
+                        <span class="error-msg" id="error-vezeteknev"></span>
+                    </div>
+
+                    <div class="form-group half-width">
+                        <label for="keresztnev">Keresztnév:</label>
+                        <input type="text" id="keresztnev" name="keresztnev" placeholder="Anna">
+                        <span class="error-msg" id="error-keresztnev"></span>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group half-width">
+                        <label for="email">E-mail cím:</label>
+                        <input type="email" id="email" name="email" placeholder="pelda@email.hu">
+                        <span class="error-msg" id="error-email"></span>
+                    </div>
+
+                    <div class="form-group half-width">
+                        <label for="telefonszam">Telefonszám:</label>
+                        <input type="tel" id="telefonszam" name="telefonszam" placeholder="+36 30 123 4567">
+                        <span class="error-msg" id="error-telefonszam"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="datum">Tervezett időpont:</label>
+                    <input type="date" id="datum" name="datum">
+                    <span class="error-msg" id="error-datum"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="lakcim">Lakcím (Számlázáshoz):</label>
+                    <input type="text" id="lakcim" name="lakcim" placeholder="1052 Budapest, Fő utca 1.">
+                    <span class="error-msg" id="error-lakcim"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="helyszin">Fotózás helyszíne:</label>
+                    <input type="text" id="helyszin" name="helyszin" placeholder="Pl. Margitsziget vagy a stúdiód">
+                    <span class="error-msg" id="error-helyszin"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="tipus">Fotózás típusa:</label>
+                    <select id="tipus" name="tipus">
+                        <option value="">Válassz egy kategóriát...</option>
+                        <option value="portre">Portré fotózás</option>
+                        <option value="esemeny">Esemény / Esküvő</option>
+                        <option value="lifestyle">Lifestyle / Reklám</option>
+                        <option value="egyeb">Egyéb</option>
+                    </select>
+                    <span class="error-msg" id="error-tipus"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="forras">Honnan hallottál rólam?</label>
+                    <select id="forras" name="forras">
+                        <option value="">Kérlek válassz...</option>
+                        <option value="instagram">Instagram</option>
+                        <option value="facebook">Facebook</option>
+                        <option value="ajanlas">Ismerős ajánlotta</option>
+                        <option value="google">Google keresés</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="uzenet">Üzenet / Részletek:</label>
+                    <textarea id="uzenet" name="uzenet" rows="5" placeholder="Írd le az elképzeléseidet..."></textarea>
+                    <span class="error-msg" id="error-uzenet"></span>
+                </div>
+
+                <div class="form-group" style="display: flex; align-items: center; gap: 0.5rem;">
+                    <input type="checkbox" id="adatkezeles" name="adatkezeles" style="width: auto;" required>
+                    <label for="adatkezeles" style="margin-bottom: 0; display: inline;">Elfogadom az adatkezelési tájékoztatót.</label>
+                </div>
+                <span class="error-msg" id="error-adatkezeles"></span>
+
+                <button type="submit" class="cta-gomb">Ajánlatkérés elküldése</button>
+                
+                <div id="sikeres-uzenet" style="display:none; color: #fca311; margin-top: 1rem; font-weight: bold;">
+                    Köszönöm! Az üzenetedet sikeresen elküldtük.
+                </div>
+            </form>
+
+            <div style="margin-top: 3rem; color: #fff;">
+                <h3>Vagy keress közvetlenül:</h3>
+                <p>Telefon: +36 30 123 4567</p>
+                <p>E-mail: <a href="mailto:szbalint06@gmail.com" style="color: #fca311;">szbalint06@gmail.com</a></p>
+            </div>
+
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-tartalom">
+          <div class="footer-elerhetoseg">
+            <h3>Elérhetőség</h3>
+            <p>Kérdésed van? Írj egy e-mailt!</p>
+            <p><a href="mailto:szbalint06@gmail.com">szbalint06@gmail.com</a></p>
+          </div>
+          <div class="footer-social">
+            <h3>Kövess be Instagramon!</h3>
+            <ul>
+              <li><a href="https://www.instagram.com/sz_baliint/" target="_blank">Instagram</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="copyright">
+          <p>&copy; 2025 B-STILLED PHOTO. Minden jog fenntartva.</p>
+        </div>
+      </div>
+    </footer>
+
+
+    <button id="scrollToTopBtn" title="Ugrás a tetejére">&#8679;</button>
+  </body>
+</html> 
