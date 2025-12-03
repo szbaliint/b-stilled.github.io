@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
     let isValid = true;
 
-    // Helper function to show error
     const showError = (input, message) => {
       const errorSpan = document.getElementById(`error-${input.id}`);
       if (errorSpan) {
@@ -18,7 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
       isValid = false;
     };
 
-    // Helper function to clear error
     const clearError = (input) => {
       const errorSpan = document.getElementById(`error-${input.id}`);
       if (errorSpan) {
@@ -27,7 +25,6 @@ document.addEventListener("DOMContentLoaded", () => {
       input.classList.remove("invalid");
     };
 
-    // Validate Field
     const validateField = (input, condition, message) => {
       if (condition) {
         showError(input, message);
@@ -36,7 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     };
 
-    // 1. Vezetéknév
     const vezeteknev = document.getElementById("vezeteknev");
     validateField(
       vezeteknev,
@@ -44,7 +40,6 @@ document.addEventListener("DOMContentLoaded", () => {
       "A vezetéknév megadása kötelező!"
     );
 
-    // 2. Keresztnév
     const keresztnev = document.getElementById("keresztnev");
     validateField(
       keresztnev,
@@ -52,7 +47,6 @@ document.addEventListener("DOMContentLoaded", () => {
       "A keresztnév megadása kötelező!"
     );
 
-    // 3. Email
     const email = document.getElementById("email");
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     validateField(
@@ -61,7 +55,6 @@ document.addEventListener("DOMContentLoaded", () => {
       "Kérlek, adj meg egy érvényes e-mail címet!"
     );
 
-    // 4. Telefonszám
     const telefonszam = document.getElementById("telefonszam");
     validateField(
       telefonszam,
@@ -69,11 +62,9 @@ document.addEventListener("DOMContentLoaded", () => {
       "Kérlek, adj meg egy érvényes telefonszámot!"
     );
 
-    // 5. Dátum
     const datum = document.getElementById("datum");
     validateField(datum, datum.value === "", "Kérlek, válassz egy dátumot!");
 
-    // 6. Lakcím
     const lakcim = document.getElementById("lakcim");
     validateField(
       lakcim,
@@ -81,7 +72,6 @@ document.addEventListener("DOMContentLoaded", () => {
       "A lakcím megadása kötelező!"
     );
 
-    // 7. Helyszín
     const helyszin = document.getElementById("helyszin");
     validateField(
       helyszin,
@@ -89,7 +79,6 @@ document.addEventListener("DOMContentLoaded", () => {
       "A helyszín megadása kötelező!"
     );
 
-    // 8. Típus
     const tipus = document.getElementById("tipus");
     validateField(
       tipus,
@@ -97,7 +86,6 @@ document.addEventListener("DOMContentLoaded", () => {
       "Kérlek, válassz egy fotózási típust!"
     );
 
-    // 9. Üzenet
     const uzenet = document.getElementById("uzenet");
     validateField(
       uzenet,
@@ -105,7 +93,6 @@ document.addEventListener("DOMContentLoaded", () => {
       "Az üzenetnek legalább 10 karakter hosszúnak kell lennie!"
     );
 
-    // 10. Adatkezelés
     const adatkezeles = document.getElementById("adatkezeles");
     validateField(
       adatkezeles,
@@ -114,11 +101,9 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
     if (isValid) {
-      // Sikeres validáció
       successMessage.style.display = "block";
       form.reset();
 
-      // Opcionális: elrejteni a sikeres üzenetet pár másodperc után
       setTimeout(() => {
         successMessage.style.display = "none";
       }, 5000);
